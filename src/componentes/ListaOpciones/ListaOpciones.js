@@ -1,7 +1,7 @@
 
 import "./ListaOpciones.css"
 
-const ListaOpciones = () => {
+const ListaOpciones = (props) => {
 
     const equipos = [
 
@@ -13,15 +13,24 @@ const ListaOpciones = () => {
         "Móvil",
         "Innovación y Gestión"
     ]
+
+    const manejarCambio = (e) => {
+        console.log("cambio", e.target.value)
+        //Se envia el valor al papa y este se estara actulizando, se hace el envio atravez de la funcion actualizarEquipo
+        props.actualizarEquipo(e.target.value)
+    }
     
     return <div className="lista-opciones">
         <label>Equipos</label>
-        <select>
+        {/*Select recibe el valor y la funcion desde el componente papa que es formulario*/}
+        <select value={props.valor} onChange={manejarCambio}> 
+            {/* describe una opción en una lista desplegable que está deshabilitada y no tiene ningún valor asociado inicialmente.*/}
+            <option value="" disabled defaultValue="" hidden>Seleccionar quipo</option>
             {equipos.map((equipo, index) => 
-                <option key={index}>{equipo}</option> /* index es la posicion del elemento dentro del arreglo */
+                <option key={index} value={equipo}>{equipo}</option> /* index es la posicion del elemento dentro del arreglo */
             )}
         </select>
-    </div>
+    </div> 
 }
 
 export default ListaOpciones;
