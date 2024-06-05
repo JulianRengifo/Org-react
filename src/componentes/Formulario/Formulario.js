@@ -7,7 +7,7 @@ import Boton from "../Boton";
 
 //Formulario estara pendiente de actualizar los valores
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     //Valor
     const[nombre,actualizarNombre] = useState("")
@@ -60,6 +60,7 @@ const Formulario = () => {
             <ListaOpciones
             valor={equipo}
             actualizarEquipo={actualizarEquipo}
+            equipos ={props.equipos}
             />
 
             <Boton> 
