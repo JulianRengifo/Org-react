@@ -69,14 +69,12 @@ function App() {
   return (
     <div>
       <Header />
-      {/* mostarFormulario ? <Formulario/> : <> </> */}
-      {/* Recibe equipo y con arrow function devuelve equipo.titulo */}
-      {mostarFormulario && <Formulario equipos={equipos.map((equipo) => equipo.titulo)}/>}
+      {mostarFormulario ? <Formulario/> : <> </>}
       <MiOrg cambiarMostrar={cambiarMostrar} />
       {
         /* este fragmento de código recorre un array de objetos llamado "equipos",
         devuelve un conjunto de componentes "Equipo" con los datos de cada equipo como propiedades.*/
-        equipos.map((equipo) => <Equipo datos={equipo} key={equipo.titulo}/>)
+        equipos.map ((equipo) => <Equipo datos={equipo} key={equipo.titulo}/>)
       }
     </div>
   );

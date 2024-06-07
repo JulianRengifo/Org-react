@@ -3,6 +3,16 @@ import "./ListaOpciones.css"
 
 const ListaOpciones = (props) => {
 
+    const equipos = [
+
+        "Programacion",
+        "Front-End",
+        "Data Science",
+        "Devops",
+        "UX y Diseño",
+        "Móvil",
+        "Innovación y Gestión"
+    ]
 
     const manejarCambio = (e) => {
         console.log("cambio", e.target.value)
@@ -16,7 +26,7 @@ const ListaOpciones = (props) => {
         <select value={props.valor} onChange={manejarCambio}> 
             {/* describe una opción en una lista desplegable que está deshabilitada y no tiene ningún valor asociado inicialmente.*/}
             <option value="" disabled defaultValue="" hidden>Seleccionar quipo</option>
-            {props.equipos.map((equipo, index) => 
+            {equipos.map((equipo, index) => 
                 <option key={index} value={equipo}>{equipo}</option> /* index es la posicion del elemento dentro del arreglo */
             )}
         </select>
