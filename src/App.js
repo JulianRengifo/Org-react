@@ -10,12 +10,23 @@ import Equipo from './componentes/Equipo/index.js';
 function App() {
 
   const [mostarFormulario, actualizarMosrar] = useState(true)
+  //inicializamos nuestros colaboradores como un arreglo vacio cuando se maneja una lista
+  const [colaboradores, actualizarColaboradores] = useState()
   
   // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
   // otro concepto seria corto circuito --> condicion && seMuestra --> {mostrarFormulario && <Formulario/>}
 
   const cambiarMostrar = () => {
     actualizarMosrar(!mostarFormulario)
+  }
+
+  // Registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo colaborador", colaborador)
+    // Spread operator ({...})
+    // Hace una copia de los valores actuales y despues agregamos el nuevo colaborador
+    actualizarColaboradores([...colaboradores, colaborador])
   }
 
   // Lista de equipos
@@ -69,7 +80,16 @@ function App() {
   return (
     <div>
       <Header />
-      {mostarFormulario ? <Formulario/> : <> </>}
+      {/* {mostarFormulario ? <Formulario/> : <> </>} */}
+      {
+      /*está renderizando el componente <Formulario> solo si mostrarFormulario es verdadero,
+       y le está pasando un arreglo de títulos de equipos como prop llamada equipos. */
+      mostarFormulario && <Formulario
+        equipos={equipos.map((equipo) => equipo.titulo)}
+        //Atravez de formulario recibe registrar colaborador
+        registrarColaborador = {registrarColaborador}
+      />
+      }
       <MiOrg cambiarMostrar={cambiarMostrar} />
       {
         /* este fragmento de código recorre un array de objetos llamado "equipos",
