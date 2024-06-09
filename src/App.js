@@ -102,7 +102,8 @@ function App() {
         datos={equipo} 
         key={equipo.titulo}
         //Enviamos los colaboradores a equipo
-        colaboradores = {colaboradores}
+        //usamos filter para filtrar los colaboradores y solo regrese  cuales son los colaboradores que pertenece al equipos que los muestre
+        colaboradores = {colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
         />
       )
       }
