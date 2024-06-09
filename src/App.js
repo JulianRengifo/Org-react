@@ -9,15 +9,16 @@ import Equipo from './componentes/Equipo/index.js';
 
 function App() {
 
-  const [mostarFormulario, actualizarMosrar] = useState(true)
+  const [mostarFormulario, actualizarMostrar] = useState(true)
   //inicializamos nuestros colaboradores como un arreglo vacio cuando se maneja una lista
-  const [colaboradores, actualizarColaboradores] = useState()
+  const [colaboradores, actualizarColaboradores] = useState([])
+  //Map es un metodo que pertenece a los arreglos, por eso se meneja un arreglo vacio ([])
   
   // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
   // otro concepto seria corto circuito --> condicion && seMuestra --> {mostrarFormulario && <Formulario/>}
 
   const cambiarMostrar = () => {
-    actualizarMosrar(!mostarFormulario)
+    actualizarMostrar(!mostarFormulario)
   }
 
   // Registrar colaborador
@@ -90,11 +91,20 @@ function App() {
         registrarColaborador = {registrarColaborador}
       />
       }
+
       <MiOrg cambiarMostrar={cambiarMostrar} />
+
+      {/*Creacion de los equipos*/}
       {
         /* este fragmento de código recorre un array de objetos llamado "equipos",
         devuelve un conjunto de componentes "Equipo" con los datos de cada equipo como propiedades.*/
-        equipos.map ((equipo) => <Equipo datos={equipo} key={equipo.titulo}/>)
+        equipos.map((equipo) => <Equipo 
+        datos={equipo} 
+        key={equipo.titulo}
+        //Enviamos los colaboradores a equipo
+        colaboradores = {colaboradores}
+        />
+      )
       }
     </div>
   );
