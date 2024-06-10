@@ -4,6 +4,7 @@ import Header from './componentes/Header/Header.js'
 import Formulario from './componentes/Formulario/Formulario.js';
 import MiOrg from './componentes/MiOrg/index.js';
 import Equipo from './componentes/Equipo/index.js';
+import Footer from './componentes/Footer/index.jsx';
 
 //cuando trabajamos con estados tienen que estar dentro de un componente o una funcion
 
@@ -11,7 +12,13 @@ function App() {
 
   const [mostarFormulario, actualizarMostrar] = useState(true)
   //inicializamos nuestros colaboradores como un arreglo vacio cuando se maneja una lista
-  const [colaboradores, actualizarColaboradores] = useState([])
+  // const [colaboradores, actualizarColaboradores] = useState([])
+  const [colaboradores, actualizarColaboradores] = useState([{
+    equipo: "Front-End",
+    foto: "https://github.com/JulianRengifo.png",
+    nombre: "Julian Rengifo",
+    puesto: "Ingeniero de Sistemas"
+  }])
   //Map es un metodo que pertenece a los arreglos, por eso se meneja un arreglo vacio ([])
   
   // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
@@ -107,6 +114,9 @@ function App() {
         />
       )
       }
+
+      <Footer/>
+
     </div>
   );
 }
