@@ -36,6 +36,7 @@ const Equipo = (props) => {
                                 /* usamos un key cuando usamos .map, esto para cuando se elimine un 
                                 colaborador se elimine el colaborador seleccionado y no todos */
                                 key={index}
+                                colorPrimario={colorPrimario}
                                 />
                             )
                     }
