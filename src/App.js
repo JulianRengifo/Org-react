@@ -17,8 +17,45 @@ function App() {
     equipo: "Front-End",
     foto: "https://github.com/JulianRengifo.png",
     nombre: "Julian Rengifo",
-    puesto: "Ingeniero de Sistemas"
-  }])
+    puesto: "Ingeniero de Sistemas"    
+  },
+  {
+    equipo: "Programación",
+    foto: "https://upload.wikimedia.org/wikipedia/en/e/eb/Freddy_Krueger_%28Robert_Englund%29.jpg",
+    nombre: "Freddy krueger",
+    puesto: "Instructor" 
+  },
+  {
+    equipo: "Data Science",
+    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBGzsolr5WUsw4Vz5xu989yGxZMdD9BY6N2Q&s",
+    nombre: "Morticia Addams",
+    puesto: "directora creativa de lo macabro"
+  },
+  {
+    equipo: "Devops",
+    foto: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/03/hipertextual-2020604748.jpg?fit=1200%2C800&quality=55&strip=all&ssl=1",
+    nombre: "Lord Voldemort",
+    puesto: "especialista en maldiciones de red"
+  },
+  {
+    equipo: "UX y Diseño",
+    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLbXFzGkZf10tmVZsnYan0IeC10rnuZOKgbw&s",
+    nombre: "Michael Mayers",
+    puesto: "analista de datos sobrenaturales"
+  },
+  {
+    equipo: "Móvil",
+    foto: "https://i.etsystatic.com/18914926/r/il/f14381/2237038285/il_570xN.2237038285_romt.jpg",
+    nombre: "Jason Voorhees",
+    puesto: "guardián del dominio de lo desconocido"
+  },
+  {
+    equipo: "Innovación y Gestión",
+    foto: "https://http2.mlstatic.com/D_NQ_NP_783145-MLA51607338448_092022-O.webp",
+    nombre: "Scary Movie",
+    puesto: "diseñadora de experiencias inquietantes"
+  }
+])
   //Map es un metodo que pertenece a los arreglos, por eso se meneja un arreglo vacio ([])
   
   // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
@@ -37,11 +74,16 @@ function App() {
     actualizarColaboradores([...colaboradores, colaborador])
   }
 
+  //Eliminar colaborador
+  const eliminarColaborador = () => {
+    console.log("Eliminar Colaborador")
+  }
+
   // Lista de equipos
   const equipos = [
 
     {
-    titulo: "Programacion",
+    titulo: "Programación",
     colorPrimario: "#57C278",
     colorSecundario: "#D9F7E9"
     },
@@ -111,6 +153,8 @@ function App() {
         //Enviamos los colaboradores a equipo
         //usamos filter para filtrar los colaboradores y solo regrese  cuales son los colaboradores que pertenece al equipos que los muestre
         colaboradores = {colaboradores.filter(colaborador => colaborador.equipo === equipo.titulo)}
+        // Nombre cualquiera     Nombre de la funcion
+        eliminarColaborador={eliminarColaborador}
         />
       )
       }

@@ -9,7 +9,7 @@ const Equipo = (props) => {
 
     const {colorPrimario, colorSecundario, titulo} = props.datos
 
-    const { colaboradores} = props
+    const { colaboradores, eliminarColaborador} = props
 
     const colorFondo = {
         /*establece el color de fondo de algún elemento en función del valor de 
@@ -37,6 +37,7 @@ const Equipo = (props) => {
                                 colaborador se elimine el colaborador seleccionado y no todos */
                                 key={index}
                                 colorPrimario={colorPrimario}
+                                eliminarColaborador={eliminarColaborador}
                                 />
                             )
                     }
