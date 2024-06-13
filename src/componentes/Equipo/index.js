@@ -8,7 +8,7 @@ const Equipo = (props) => {
     // Destructuración
     // Se usa la destructuracion para no repetir props.datos
 
-    const {colorPrimario, colorSecundario, titulo} = props.datos
+    const {colorPrimario, colorSecundario, titulo, id} = props.datos
 
     const { colaboradores, eliminarColaborador, actualizarColor} = props
 
@@ -27,17 +27,16 @@ const Equipo = (props) => {
         //Usamos una estructura condicional, se utiliza para verificar si un arreglo tiene elementos donde colaboradores si es mayor a 0 entonces realizara la siguiente operacion
         colaboradores.length > 0 &&
             <section className="equipo" style={colorFondo}>
-                <h3 style={estiloTitulo}>{titulo}</h3>
                 <input
                 className="input-color"
                 type="color"
                 value={colorPrimario}
                 // imprime en la consola del navegador el valor actual del elemento de formulario cada vez que su valor cambia
                 onChange={(evento) => {
-                    actualizarColor(evento.target.value, titulo)
+                    actualizarColor(evento.target.value, id)
                 }}
                 />
-
+                <h3 style={estiloTitulo}>{titulo}</h3>
                 <div className="colaboradores">
                     {
                         // le agregamos la propiedad index que es la posicion, en este caso se usa para cuando varios colaboradores tengan el mismo nombre
