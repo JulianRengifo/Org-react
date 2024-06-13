@@ -9,7 +9,7 @@ const Equipo = (props) => {
 
     const {colorPrimario, colorSecundario, titulo} = props.datos
 
-    const { colaboradores, eliminarColaborador} = props
+    const { colaboradores, eliminarColaborador, actualizarColor} = props
 
     const colorFondo = {
         /*establece el color de fondo de algún elemento en función del valor de 
@@ -31,8 +31,9 @@ const Equipo = (props) => {
                 className="input-color"
                 type="color"
                 value={colorSecundario}
+                // imprime en la consola del navegador el valor actual del elemento de formulario cada vez que su valor cambia
                 onChange={(evento) => {
-                    console.log(evento.target.value)
+                    actualizarColor(evento.target.value, titulo)
                 }}
                 />
 
@@ -46,6 +47,7 @@ const Equipo = (props) => {
                                 key={index}
                                 colorPrimario={colorPrimario}
                                 eliminarColaborador={eliminarColaborador}
+                                actualizarColor={actualizarColor}
                                 />
                             )
                     }
