@@ -56,37 +56,11 @@ function App() {
     puesto: "diseñadora de experiencias inquietantes"
   }
 ])
-  //Map es un metodo que pertenece a los arreglos, por eso se meneja un arreglo vacio ([])
-  
-  // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
-  // otro concepto seria corto circuito --> condicion && seMuestra --> {mostrarFormulario && <Formulario/>}
 
-  const cambiarMostrar = () => {
-    actualizarMostrar(!mostarFormulario)
-  }
-
-  // Registrar colaborador
-
-  const registrarColaborador = (colaborador) => {
-    console.log("Nuevo colaborador", colaborador)
-    // Spread operator ({...})
-    // Hace una copia de los valores actuales y despues agregamos el nuevo colaborador
-    actualizarColaboradores([...colaboradores, colaborador])
-  }
-
-  //Eliminar colaborador
-  const eliminarColaborador = () => {
-    console.log("Eliminar Colaborador")
-  }
-
-  // Actualizar color de equipo
-  const actualizarColor = (color, titulo) => {
-    console.log("Actualizar: ", color, titulo)
-  }
-
-  // Lista de equipos
-  const equipos = [
-
+// Lista de equipos
+const [equipos, actualizarEquipos] = useState ([
+  /* Se agrega la lista de equipos en useState para que react verifique si hubo un cambio en la insformacion
+  y automaticamente se actualice */
     {
     titulo: "Programación",
     colorPrimario: "#57C278",
@@ -129,8 +103,45 @@ function App() {
       colorSecundario: "#FFEEDF"
     }
     
-]
+])
 
+  //Map es un metodo que pertenece a los arreglos, por eso se meneja un arreglo vacio ([])
+  
+  // Ternario --> condicion ? seMuestra : noSemuestra  // funciona como un if else
+  // otro concepto seria corto circuito --> condicion && seMuestra --> {mostrarFormulario && <Formulario/>}
+
+  const cambiarMostrar = () => {
+    actualizarMostrar(!mostarFormulario)
+  }
+
+  // Registrar colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo colaborador", colaborador)
+    // Spread operator ({...})
+    // Hace una copia de los valores actuales y despues agregamos el nuevo colaborador
+    actualizarColaboradores([...colaboradores, colaborador])
+  }
+
+  //Eliminar colaborador
+  const eliminarColaborador = () => {
+    console.log("Eliminar Colaborador")
+  }
+
+  // Actualizar color de equipo
+  const actualizarColor = (color, titulo) => {
+    console.log("Actualizar: ", color, titulo)
+
+    /* actualiza el color primario de un equipo en el array equipos si el título del equipo coincide con un título proporcionado,
+     y luego actualiza el estado de los equipos llamando a actualizarEquipos con el array actualizado. */
+    const equiposActualizados = equipos.map((equipo) => {
+      if(equipo.titulo === titulo){
+        equipo.colorPrimario = color
+      }
+      return equipo
+    })
+    actualizarEquipos(equiposActualizados)
+  }
 
   return (
     <div>

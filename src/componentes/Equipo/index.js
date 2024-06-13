@@ -1,6 +1,7 @@
 
 import "./Equipo.css"
 import Colaborador from "../Colaborador"
+import hexToRgba from "hex-to-rgba";
 
 const Equipo = (props) => {
 
@@ -12,9 +13,9 @@ const Equipo = (props) => {
     const { colaboradores, eliminarColaborador, actualizarColor} = props
 
     const colorFondo = {
-        /*establece el color de fondo de algún elemento en función del valor de 
-        colorSecundario dentro de los datos proporcionados a través de props.*/
-        backgroundColor: colorSecundario
+        //Usamos el paquete hex-to-rgba para aplicar opacidad al color del fondo
+        //aplicamos hexToRgba y le pasamos el primer valor el colorPrimario y el segundo valor la opacidad
+        backgroundColor: hexToRgba(colorPrimario, 0.6)
     }
 
     const estiloTitulo = {borderColor: colorPrimario}
@@ -30,7 +31,7 @@ const Equipo = (props) => {
                 <input
                 className="input-color"
                 type="color"
-                value={colorSecundario}
+                value={colorPrimario}
                 // imprime en la consola del navegador el valor actual del elemento de formulario cada vez que su valor cambia
                 onChange={(evento) => {
                     actualizarColor(evento.target.value, titulo)
