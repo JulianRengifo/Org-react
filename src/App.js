@@ -140,8 +140,13 @@ const [equipos, actualizarEquipos] = useState ([
   }
 
   //Eliminar colaborador
-  const eliminarColaborador = () => {
-    console.log("Eliminar Colaborador")
+  const eliminarColaborador = (id) => {
+    console.log("Eliminar Colaborador", id)
+
+    // filtra los elementos del array colaboradores, dejando solo aquellos cuyo id no coincide con el id proporcionado, y los almacena en un nuevo array llamado nuevosColaboradores.
+    //Filter nos regresa un nuevo arreglo sin modificar el original
+    const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
+    actualizarColaboradores(nuevosColaboradores)
   }
 
   // Actualizar color de equipo
