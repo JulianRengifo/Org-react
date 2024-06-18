@@ -67,11 +67,11 @@ function App() {
 ])
 
 // Lista de equipos
-const [equipos, actualizarEquipos] = useState ([
-  /* Se agrega la lista de equipos en useState para que react verifique si hubo un cambio en la insformacion
+/* Se agrega la lista de equipos en useState para que react verifique si hubo un cambio en la insformacion
   y automaticamente se actualice */
+const [equipos, actualizarEquipos] = useState ([
     {
-      id: uuid(), // Identificador unico
+    id: uuid(), // Identificador unico
     titulo: "Programación",
     colorPrimario: "#57C278",
     colorSecundario: "#D9F7E9"
@@ -164,6 +164,13 @@ const [equipos, actualizarEquipos] = useState ([
     actualizarEquipos(equiposActualizados)
   }
 
+  // Crear Equipo
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo)
+    //agregamos un nuevo equipo a la lista actual de equipos en un estado de React, asegurándose de que cada equipo tenga un identificador único generado 
+    actualizarEquipos([...equipos, { ...nuevoEquipo, id: uuid() }])
+  }
+
   return (
     <div>
       <Header />
@@ -175,6 +182,7 @@ const [equipos, actualizarEquipos] = useState ([
         equipos={equipos.map((equipo) => equipo.titulo)}
         //Atravez de formulario recibe registrar colaborador
         registrarColaborador = {registrarColaborador}
+        crearEquipo = {crearEquipo}
       />
       }
 

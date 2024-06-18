@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./Formulario.css"
 import CampoTexto from "../CampoTexto/index.js";
 import ListaOpciones from "../ListaOpciones/ListaOpciones.js";
-import "../Boton"
 import Boton from "../Boton";
 
 //Formulario estara pendiente de actualizar los valores
@@ -15,8 +14,12 @@ const Formulario = (props) => {
     const[foto, actualizarFoto] = useState("")
     const[equipo, actualizarEquipo] = useState("")
 
+    //Equipo
+    const [titulo, actualizarTitulo] = useState("")
+    const [color, actualizarColor] = useState("")
+
     //Nos evita a colocar tanto props.colaborador, props.etc
-    const {registrarColaborador} = props
+    const { registrarColaborador, crearEquipo } = props
 
     const manejarEnvio = (e) => {
         e.preventDefault() /* Evita el envío del formulario predeterminado, no se recarga la pagina */
@@ -30,6 +33,13 @@ const Formulario = (props) => {
             equipo
         }
         registrarColaborador(datosEnviar)
+    }
+
+    const manejarNuevoEquipo = (e) => {
+        e.preventDefault()
+        //Enviamos el nuevo formulario a App.js pero como un objeto
+        // titulo y color hacen referencia al valor que esta almacenado en el useState
+        crearEquipo({titulo, colorPrimario: color})
     }
 
     return <section className= "formulario">
@@ -63,12 +73,35 @@ const Formulario = (props) => {
             <ListaOpciones
             valor={equipo}
             actualizarEquipo={actualizarEquipo}
+            equipos={props.equipos}
             />
 
             <Boton> 
                 Crear 
             </Boton> 
         </form> 
+
+        <form onSubmit={manejarNuevoEquipo}> 
+            <h2>Rellena el formulario para crear el equipo.</h2>
+
+            <CampoTexto 
+            titulo= "Titulo" 
+            placeholder= "Ingresar Titulo" 
+            required 
+            valor={titulo} 
+            actualizarValor={actualizarTitulo}
+            />
+            
+            <CampoTexto 
+            titulo="Color"
+            placeholder= "Ingresar el color en Hex" 
+            required
+            valor={color}
+            actualizarValor={actualizarColor}
+            />
+
+            <Boton> Registrar Equipo </Boton>
+        </form>
     </section>
 }
 
