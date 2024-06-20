@@ -1,10 +1,10 @@
 
-.campo-texto{
+.campo{
     margin: 24px 0;
     font-family: "Montserrat", sans-serif;
 }
 
-.campo-texto label{
+.campo label{
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
     font-weight: 600;
@@ -12,7 +12,7 @@
     margin-bottom: 8px;
 }
 
-.campo-texto input{
+.campo input{
     width: 100%;
     background-color: #FFFFFF;
     box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.06);
@@ -21,4 +21,9 @@
     outline-color: #6278F7;    /* establece el color del contorno de un elemento */
     font-size: 16px;
     box-sizing: border-box;
+}
+
+.campo-color input{
+    height: 2.5rem;
+    padding: 0.3px 1.2rem;
 }

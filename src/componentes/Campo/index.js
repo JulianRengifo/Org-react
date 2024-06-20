@@ -1,11 +1,14 @@
 import { useState } from "react"
-import "./CampoTexto.css"
+import "./Campo.css"
 
-const CampoTexto = (props) => {
+const Campo = (props) => {
     // ["como se hacede al valor del estado, y al lado derecho la funcion que se encarga de actualizar el estado"]
     // const [valor, actualizarValor] = useState("")
     
     const placeholderModificado = `${props.placeholder}...` /* Pone los puntos en los placeholder */
+
+    //Destructuracion
+    const {type = "texto"} = props
 
     const manejarCambio = (e) => {
         /*e.target.value da el valor actual del elemento en el que ocurrió el evento. 
@@ -17,7 +20,8 @@ const CampoTexto = (props) => {
         props.actualizarValor(e.target.value)
     }
 
-    return <div className = "campo-texto">
+    //Agregamos el tipo a campo si es text o color usando campo-${type}
+    return <div className = {`campo campo-${type}`}>
         <label>{props.titulo}</label>
         <input 
         placeholder= {placeholderModificado} 
@@ -28,10 +32,9 @@ const CampoTexto = (props) => {
         /* cuando el usuario cambie el valor del elemento al que se le ha asignado el manejador de eventos onChange, 
         la función manejarCambio se ejecutará automáticamente y tendrás acceso al nuevo valor del elemento a través de e.target.value.*/
         onChange={manejarCambio}
+        type={type}
         />
     </div>
 }
 
-
-
-export default CampoTexto;
+export default Campo;
