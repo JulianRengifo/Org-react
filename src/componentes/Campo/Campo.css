@@ -1,25 +1,25 @@
 
 .campo{
-    margin: 24px 0;
+    margin: 1.5rem 0;
     font-family: "Montserrat", sans-serif;
 }
 
 .campo label{
     font-family: "Montserrat", sans-serif;
-    font-size: 18px;
+    font-size: 1.1rem;
     font-weight: 600;
     display: block;    /* Posiciona el input al otro renglon */
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .campo input{
     width: 100%;
     background-color: #FFFFFF;
-    box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.06);
+    box-shadow: 0.6rem 0.6rem 1.8rem rgb(0, 0, 0, 0.06);
     border: none;
-    padding: 30px 20px;
+    padding: 1.8rem 1.2rem;
     outline-color: #6278F7;    /* establece el color del contorno de un elemento */
-    font-size: 16px;
+    font-size: 1rem;
     box-sizing: border-box;
 }
 

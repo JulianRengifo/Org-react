@@ -10,7 +10,7 @@ const Equipo = (props) => {
 
     const {colorPrimario, colorSecundario, titulo, id} = props.datos
 
-    const { colaboradores, eliminarColaborador, actualizarColor} = props
+    const { colaboradores, eliminarColaborador, actualizarColor, like} = props
 
     const colorFondo = {
         //Usamos el paquete hex-to-rgba para aplicar opacidad al color del fondo
@@ -48,6 +48,7 @@ const Equipo = (props) => {
                                 colorPrimario={colorPrimario}
                                 eliminarColaborador={eliminarColaborador}
                                 actualizarColor={actualizarColor}
+                                like={like}
                                 />
                             )
                     }
