@@ -23,7 +23,7 @@ const MiOrg = (props) => {
 
     return <section className="orgSection">
         <h3 className="title">Mi organización</h3>
-        <img src="/img/add.png" alt="add" onClick={props.cambiarMostrar}/> {/* Cuando damos click en el boton activa el const cambiarMostrar */}
+        <img src="/img/add.png" alt="add" id="add" onClick={props.cambiarMostrar}/> {/* Cuando damos click en el boton activa el const cambiarMostrar */}
     </section>
     
 }

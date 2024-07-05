@@ -26,49 +26,49 @@ function App() {
   {
     id: uuid(),
     equipo: "Programación",
-    foto: "https://upload.wikimedia.org/wikipedia/en/e/eb/Freddy_Krueger_%28Robert_Englund%29.jpg",
-    nombre: "Freddy krueger",
-    puesto: "Instructor" ,
+    foto: "https://github.com/genesysR-dev.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de software e instructora",
     fav: false
   },
   {
     id: uuid(),
     equipo: "Data Science",
-    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBGzsolr5WUsw4Vz5xu989yGxZMdD9BY6N2Q&s",
-    nombre: "Morticia Addams",
-    puesto: "directora creativa de lo macabro",
+    foto: "https://github.com/christianpva.png",
+    nombre: "Christian Velasco",
+    puesto: "Head de Alura e instructor",
     fav: false
   },
   {
     id: uuid(),
     equipo: "Devops",
-    foto: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2020/03/hipertextual-2020604748.jpg?fit=1200%2C800&quality=55&strip=all&ssl=1",
-    nombre: "Lord Voldemort",
-    puesto: "especialista en maldiciones de red",
+    foto: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora en Alura Latam",
     fav: false
   },
   {
     id: uuid(),
     equipo: "UX y Diseño",
-    foto: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLbXFzGkZf10tmVZsnYan0IeC10rnuZOKgbw&s",
-    nombre: "Michael Mayers",
-    puesto: "analista de datos sobrenaturales",
+    foto: "https://github.com/joseLatam.png",
+    nombre: "Jose Gonzalez",
+    puesto: "Dev. FullStack",
     fav: false
   },
   {
     id: uuid(),
     equipo: "Móvil",
-    foto: "https://i.etsystatic.com/18914926/r/il/f14381/2237038285/il_570xN.2237038285_romt.jpg",
-    nombre: "Jason Voorhees",
-    puesto: "guardián del dominio de lo desconocido",
+    foto: "https://github.com/JulianRengifo.png",
+    nombre: "Julian Rengifo",
+    puesto: "Ingeniero de Sistemas",
     fav: false
   },
   {
     id: uuid(),
     equipo: "Innovación y Gestión",
-    foto: "https://http2.mlstatic.com/D_NQ_NP_783145-MLA51607338448_092022-O.webp",
-    nombre: "Scary Movie",
-    puesto: "diseñadora de experiencias inquietantes", 
+    foto: "https://github.com/genesysR-dev.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de software e instructora",
     fav: false
   }
 ])

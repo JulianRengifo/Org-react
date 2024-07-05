@@ -21,18 +21,23 @@
 }
 
 @media (max-width:1024px) {
+
+    .formulario{
+        gap: 2rem;
+    }
+    
     .formulario form{
         padding: 4rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    
+    .formulario{
+        gap: 2rem;
+    }
     .formulario form{
         padding: 0.5rem 1.25rem;
-    }
-
-    .button {
-
     }
 }
 

@@ -4,19 +4,46 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 80px;
+    margin-bottom: 5rem;
 }
 
 .title{
     color: #6278F7;
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 400;
-    padding-bottom: 24px;
-    border-bottom: 4px solid #6278F7;  /*Linea debajo del titulo "Mi organización"*/
+    padding-bottom: 1.5rem;
+    border-bottom: 0.25rem solid #6278F7;  /*Linea debajo del titulo "Mi organización"*/
 }
 
 .orgSection img{
     position: absolute;
     right: 30%;
     cursor: pointer;
+}
+
+#add {
+    transition: transform 0.3s ease-out;
+}
+
+#add:active {
+    transform: scale(0.9); /* Efecto de escala al hacer clic */
+    cursor: pointer;
+}
+
+@media (max-width:1024px) {
+    .orgSection img {
+        right: 15%;
+    }
+}
+
+@media (max-width: 768px){
+    .orgSection{
+        flex-direction: column;
+        margin-bottom: 2rem;
+    }
+
+    .orgSection img{
+        position: static; 
+    }
+
 }

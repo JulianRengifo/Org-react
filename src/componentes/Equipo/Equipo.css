@@ -1,6 +1,6 @@
 .equipo{
     width: 100%;
-    padding: 32px;
+    padding: 2rem;
     /*el ancho y la altura que especifiques serán el tamaño total del elemento, independientemente del relleno y el borde.
     Evita que se desborde la pagina ocupando mas del 100% que ya se definio*/
     box-sizing: border-box;
@@ -21,8 +21,9 @@
     color: #212121;
     border-bottom: 4px solid;
     display: inline-block; /*evita que la linea ocupe todo el ancho, solo debe ocupar el mismo espacio del h3*/
-    padding-bottom: 8px;
-    margin-bottom: 40px;
+    padding-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
 }
 
 .colaboradores{

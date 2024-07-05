@@ -11,8 +11,13 @@
     cursor: pointer;
     display: block;
     margin: 2rem auto;
+    box-shadow: 2px 2px 4px #c8d0e7, -1px -1px 3px #fff;
 }
 
 .boton:hover{
     color: #95FFD4;
+}
+
+.boton:active {
+    box-shadow: inset 1px 1px 3px #c8d0e7, inset -1px -1px 3px #fff;
 }
